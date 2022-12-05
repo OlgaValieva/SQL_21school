@@ -1,7 +1,7 @@
 SELECT t1.pizza_name, pizzeria.name AS pizzeria_name_1, t3.name AS pizzeria_name_2, menu.price
 FROM (SELECT * FROM menu) t1
 LEFT JOIN menu
-ON t1.price = menu.price AND t1.pizza_name = menu.pizza_name AND t1.pizzeria_id != menu.pizzeria_id
+ON t1.price = menu.price AND t1.pizza_name = menu.pizza_name AND t1.pizzeria_id < menu.pizzeria_id
 LEFT JOIN pizzeria
 ON menu.pizzeria_id = pizzeria.id
 LEFT JOIN pizzeria AS t3
